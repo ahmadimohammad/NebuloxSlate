@@ -21,9 +21,11 @@ meta:
 
 # Introduction
 
-Welcome to the Nebulox API! You can use our API to access Nebulox API endpoints.
+Welcome to Nebulox's technical document.
 
-We have language bindings in Python and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+Crypto payment gateway by Nebulox is leading solutions for Merchants and Business clients. It’s a decentralized Crypto payment gateway that enables businesses to accept transactions in Bitcoin and other crypto currencies. 
+
+This payment API allows you to integrate & accept cryptocurrencies payments into your website. The Payment API links the checkout system of your business to a payment processing network that allows your clients to make transactions from you.
 
 # Invoice
 
@@ -84,7 +86,7 @@ axios.post('https://cryptogateway-quby-dev.nginhub.com/api/invoice/create', {
 }
 ```
 
-This endpoint will create an invoice for your gateway.
+This payment crypto API allows you to integrate & accept cryptocurrency payments on your website. So create a payment!
 
 ### HTTP Request
 
@@ -95,10 +97,16 @@ This endpoint will create an invoice for your gateway.
 
 Key | Type | Required | Description
 --------- | ------- | ----------- | -----------
-apiKey | string | true |The identifier of your gateway.
-price | number | true | Price of your invoice.
-orderId | string | true | Order identifier in your database.
-baseCurrency | string | false | You can choose between `eur` AND `usd`.
-coinSymbol | string | false | The destination coin you want to have in your wallet. Only `BTC` for now.
-networkName | string | false | The network you want to receive coin from. Only `Bitcoin` for now.
+`apiKey` | string | Yes |Merchant's API key which has been provided after gateway creation.
+`price` | number | Yes | Order's price (in merchant's base currency - default: EUR).
+`orderId` | string | Yes | Merchant's order unique identifier. It will be used to track order.
+`baseCurrency` | string | No |Your price currency. (if not entered, it will be set to EUR).
+`coinSymbol` | string | No | Your order payment coin, If you send us this parameter, your user will skip the select coin page.
+`networkName` | string | No | Your order payment network, If you send us this parameter, your user will skip the select network page.
 
+<aside class="notice">
+  Note:
+  <li> <b>baseCurrency</b> must be in [<code>eur</code>, <code>usd</code>]. </li>
+  <li> <b>coinSymbol</b> must be in [<code>BTC</code>]. </li>
+  <li> <b>networkName</b> must be in [<code>Bitcoin</code>]. </li>
+</aside>
