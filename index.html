@@ -303,7 +303,7 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo-1e815a84.png" class="logo" alt="" />
+      <img src="images/logo-3a2a4129.png" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="javascript">javascript</a>
         </div>
@@ -335,9 +335,11 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Nebulox API! You can use our API to access Nebulox API endpoints.</p>
+<p>Welcome to Nebulox&#39;s technical document.</p>
 
-<p>We have language bindings in Python and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>Crypto payment gateway by Nebulox is leading solutions for Merchants and Business clients. It’s a decentralized Crypto payment gateway that enables businesses to accept transactions in Bitcoin and other crypto currencies. </p>
+
+<p>This payment API allows you to integrate &amp; accept cryptocurrencies payments into your website. The Payment API links the checkout system of your business to a payment processing network that allows your clients to make transactions from you.</p>
 <h1 id='invoice'>Invoice</h1><h2 id='create-invoice'>Create Invoice</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://cryptogateway-quby-dev.nginhub.com/api/invoice/create</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
@@ -388,7 +390,7 @@
     </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint will create an invoice for your gateway.</p>
+<p>This payment crypto API allows you to integrate &amp; accept cryptocurrency payments on your website. So create a payment!</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>POST https://cryptogateway-quby-dev.nginhub.com/api/invoice/create</code></p>
 <h3 id='request-body'>Request Body</h3>
@@ -401,42 +403,49 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>apiKey</td>
+<td><code>apiKey</code></td>
 <td>string</td>
-<td>true</td>
-<td>The identifier of your gateway.</td>
+<td>Yes</td>
+<td>Merchant&#39;s API key which has been provided after gateway creation.</td>
 </tr>
 <tr>
-<td>price</td>
+<td><code>price</code></td>
 <td>number</td>
-<td>true</td>
-<td>Price of your invoice.</td>
+<td>Yes</td>
+<td>Order&#39;s price (in merchant&#39;s base currency - default: EUR).</td>
 </tr>
 <tr>
-<td>orderId</td>
+<td><code>orderId</code></td>
 <td>string</td>
-<td>true</td>
-<td>Order identifier in your database.</td>
+<td>Yes</td>
+<td>Merchant&#39;s order unique identifier. It will be used to track order.</td>
 </tr>
 <tr>
-<td>baseCurrency</td>
+<td><code>baseCurrency</code></td>
 <td>string</td>
-<td>false</td>
-<td>You can choose between <code>eur</code> AND <code>usd</code>.</td>
+<td>No</td>
+<td>Your price currency. (if not entered, it will be set to EUR).</td>
 </tr>
 <tr>
-<td>coinSymbol</td>
+<td><code>coinSymbol</code></td>
 <td>string</td>
-<td>false</td>
-<td>The destination coin you want to have in your wallet. Only <code>BTC</code> for now.</td>
+<td>No</td>
+<td>Your order payment coin, If you send us this parameter, your user will skip the select coin page.</td>
 </tr>
 <tr>
-<td>networkName</td>
+<td><code>networkName</code></td>
 <td>string</td>
-<td>false</td>
-<td>The network you want to receive coin from. Only <code>Bitcoin</code> for now.</td>
+<td>No</td>
+<td>Your order payment network, If you send us this parameter, your user will skip the select network page.</td>
 </tr>
 </tbody></table>
+
+<aside class="notice">
+  Note:
+  <li> <b>baseCurrency</b> must be in [<code>eur</code>, <code>usd</code>]. </li>
+  <li> <b>coinSymbol</b> must be in [<code>BTC</code>]. </li>
+  <li> <b>networkName</b> must be in [<code>Bitcoin</code>]. </li>
+</aside>
 <h1 id='errors'>Errors</h1>
 <p>The Nebulox API uses the following error codes:</p>
 
