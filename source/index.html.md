@@ -6,6 +6,8 @@ language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of
 
 toc_footers:
   - <a href='https://nebulox.io/register'>Sign Up for an API Key</a>
+  - <a href='https://cryptogateway-quby-dev.nginhub.com/docs'>Swagger Docs</a>
+  - <a href='https://cryptogateway-quby-dev.nginhub.com/docs'>Postman Docs</a>
 
 includes:
   - errors
