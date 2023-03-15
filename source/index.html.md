@@ -5,9 +5,9 @@ language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of
   - javascript
 
 toc_footers:
-  - <a href='https://nebulox.io/register' ><h3>Sign Up for an API Key</h3></a>
-  - <a href='https://cryptogateway-quby-dev.nginhub.com/docs'><h3>Swagger</h3></a>
-  - <a href='https://cryptogateway-quby-dev.nginhub.com/docs'><h3>Postman</h3></a>
+  - <a href='https://nebulox.io/app/user/register' ><h3>Sign Up for an API Key</h3></a>
+  - <a href='https://api.nebulox.io/docs'><h3>Swagger</h3></a>
+  - <a href='https://api.nebulox.io/docs'><h3>Postman</h3></a>
 
 includes:
   - errors
@@ -37,7 +37,7 @@ This payment API allows you to integrate & accept cryptocurrencies payments into
 ```javascript
 const axios = require('axios');
 
-axios.post('https://cryptogateway-quby-dev.nginhub.com/api/invoice/create', {
+axios.post('https://api.nebulox.io/api/invoice/create', {
     apiKey: 'YOUR_API_KEY',
     price: '100',
     orderId: 'YOUR_ORDER_ID',
@@ -92,7 +92,7 @@ This payment crypto API allows you to integrate & accept cryptocurrency payments
 
 ### HTTP Request
 
-`POST https://cryptogateway-quby-dev.nginhub.com/api/invoice/create`
+`POST https://api.nebulox.io/api/invoice/create`
 
 
 ### Request Body
