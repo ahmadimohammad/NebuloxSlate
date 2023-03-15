@@ -7,7 +7,7 @@ language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of
 toc_footers:
   - <a href='https://nebulox.io/app/user/register' ><h3>Sign Up for an API Key</h3></a>
   - <a href='https://api.nebulox.io/docs'><h3>Swagger</h3></a>
-  - <a href='https://api.nebulox.io/docs'><h3>Postman</h3></a>
+  - <a href='#'><h3>Postman</h3></a>
 
 includes:
   - errors
