@@ -3,11 +3,13 @@ title: API Reference
 
 language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers
   - javascript
+  - php
 
 toc_footers:
-  - <a href='https://nebulox.io/app/user/register' ><h3>Sign Up for an API Key</h3></a>
+  - <a href='https://nebulox.io/register' ><h3>Sign Up for an API Key</h3></a>
+  - <hr>
   - <a href='https://api.nebulox.io/docs'><h3>Swagger</h3></a>
-  - <a href='#'><h3>Postman</h3></a>
+  - <a href='https://nebulox.io/docs'><h3>Postman</h3></a>
 
 includes:
   - errors
@@ -49,8 +51,32 @@ axios.post('https://api.nebulox.io/api/invoice/create', {
     console.log(response);
   })
   .catch(function (error) {
-    console.log(error);
+    console.error(error);
   });
+```
+
+```php
+$client = new GuzzleHttp\Client();
+
+$response = $client->request(
+    'POST',
+    'https://api.nebulox.io/api/invoice/create',
+    [
+        'form_params' => [
+          'apiKey': 'YOUR_API_KEY',
+          'price': 100,
+          'orderId': 'YOUR_ORDER_ID',
+          'baseCurrency': 'USD',
+          'coinSymbol': 'BTC',
+          'networkName': 'Bitcoin'
+        ]
+    ]
+);
+
+$headers = $response->getHeaders();
+$body = $response->getBody();
+
+var_dump($headers, $body);
 ```
 
 > If every thing you sent is correct you will get a response like bellow with status code 201:
@@ -108,7 +134,7 @@ Key | Type | Required | Description
 
 <aside class="notice">
   Note:
-  <li> <b>baseCurrency</b> must be in [<code>eur</code>, <code>usd</code>]. </li>
-  <li> <b>coinSymbol</b> must be in [<code>BTC</code>]. </li>
-  <li> <b>networkName</b> must be in [<code>Bitcoin</code>]. </li>
+  <li> <b>baseCurrency</b> must be in [<code>EUR</code>, <code>USD</code>]. </li>
+  <li> <b>coinSymbol</b> must be in [<code>BTC</code>,<code>ETH</code>,<code>USDT</code>,<code>TRX</code>]. </li>
+  <li> <b>networkName</b> must be in [<code>Bitcoin</code>,<code>Ethereum</code>,<code>Tron</code>]. </li>
 </aside>
