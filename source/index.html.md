@@ -9,7 +9,7 @@ toc_footers:
   - <a href='https://nebulox.io/app/user/register' ><h3>Sign Up for an API Key</h3></a>
   - <hr>
   - <a href='https://api.nebulox.io/docs'><h3>Swagger</h3></a>
-  - <a href='https://nebulox.io/docs'><h3>Postman</h3></a>
+  - <a href='https://www.postman.com/cloudy-shuttle-20631/workspace/nebulox-public-api/overview'><h3>Postman</h3></a>
 
 includes:
   - errors
@@ -31,6 +31,20 @@ Crypto payment gateway by Nebulox is leading solutions for Merchants and Busines
 
 This payment API allows you to integrate & accept cryptocurrencies payments into your website. The Payment API links the checkout system of your business to a payment processing network that allows your clients to make transactions from you.
 
+# API Key
+
+How to get an API key in Nebulox cryptocurrency payment gateway?
+
+1 - Create an account in Nebulox.io using this link: [Nebulox.io](https://nebulox.io/app/user/register)
+
+2 - In your dashboard, click on the gateway from the side menu. Click on Setup Your Free Gateway button and create your first gateway.
+
+3 - Fill out some simple inputs: Business Name, Payment Expiration Time, Website URL, Webhook URL and Business Logo file (Optional).
+
+4 - Click on the create [gateway button](https://nebulox.io/app/gateway) and then a dialogue box will be shown with an API key. You can see it once so make sure to copy it somewhere safe. In case of losing it, you should regenerate the link. 
+
+5-  Use this unique key in case of integrating Nebulox’s APIs.
+
 # Invoice
 
 ## Create Invoice
@@ -46,6 +60,7 @@ axios.post('https://api.nebulox.io/api/invoice/create', {
     baseCurrency: 'usd',
     coinSymbol: 'BTC',
     networkName: 'Bitcoin'
+    amount:'0.0025'
   })
   .then(function (response) {
     console.log(response);
@@ -69,6 +84,7 @@ $response = $client->request(
           'baseCurrency': 'USD',
           'coinSymbol': 'BTC',
           'networkName': 'Bitcoin'
+          'amount' :'0.0025'
         ]
     ]
 );
@@ -79,7 +95,7 @@ $body = $response->getBody();
 var_dump($headers, $body);
 ```
 
-> If every thing you sent is correct you will get a response like bellow with status code 201:
+> If everything you sent is correct you will get a response like bellow with status code 201:
 
 ```json
 {
@@ -91,7 +107,7 @@ var_dump($headers, $body);
       "gatewayId": "41c6fe17-b72f-4923-9da2-dc7a91173e73",
       "userId": "d6646cf8-0b65-4d7d-ab2b-02e8dcd1ede3",
       "addressId": null,
-      "amount": null,
+      "amount": 0.0025,
       "coinId": null,
       "networkId": null,
       "info": null,
@@ -131,6 +147,7 @@ Key | Type | Required | Description
 `baseCurrency` | string | No |Your price currency. (if not entered, it will be set to EUR).
 `coinSymbol` | string | No | Your order payment coin, If you send us this parameter, your user will skip the select coin page.
 `networkName` | string | No | Your order payment network, If you send us this parameter, your user will skip the select network page.
+`amount` | number | Yes | Order's amount.
 
 <aside class="notice">
   Note:
