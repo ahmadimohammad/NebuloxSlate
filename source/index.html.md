@@ -31,19 +31,68 @@ Crypto payment gateway by Nebulox is leading solutions for Merchants and Busines
 
 This payment API allows you to integrate & accept cryptocurrencies payments into your website. The Payment API links the checkout system of your business to a payment processing network that allows your clients to make transactions from you.
 
+
+## Nebulox Crypto Gateway
+Nebulox Gateway simplifies cryptocurrency transactions for businesses. By creating a gateway with essential details, including a Webhook URL, it facilitates real-time notifications. Valid transactions trigger automatic webhook alerts, delivering comprehensive details instantly. This user-friendly system ensures seamless integration, making cryptocurrency payments straightforward and efficient.
+
+
 # API Key
 
-How to get an API key in Nebulox cryptocurrency payment gateway?
+with An API Key you can seamlessly integrate with Nebulox's Crypto payment gateway services. follow these steps to acquire an API key: 
 
-1 - Create an account in Nebulox.io using this link: [Nebulox.io](https://nebulox.io/app/user/register)
 
-2 - In your dashboard, click on the gateway from the side menu. Click on Setup Your Free Gateway button and create your first gateway.
+**Create an Account:** Start by creating an account on Nebulox.io using this [registration link](https://nebulox.io/app/user/register).
 
-3 - Fill out some simple inputs: Business Name, Payment Expiration Time, Website URL, Webhook URL and Business Logo file (Optional).
+**Access Gateway Setup:** In your dashboard, navigate to the gateway section in the side menu. Click on the "Setup Your Free Gateway" button to create your first gateway.
 
-4 - Click on the create [gateway button](https://nebulox.io/app/gateway) and then a dialogue box will be shown with an API key. You can see it once so make sure to copy it somewhere safe. In case of losing it, you should regenerate the link. 
+**Provide Gateway Details:** Fill in some simple inputs: 
+  - Business Name
+  - Payment Expiration Time 
+  - Website URL
+  - Webhook URL
+  - Business Logo file(optional).
 
-5-  Use this unique key in case of integrating Nebulox’s APIs.
+
+**Create Gateway:** Click on the create [gateway button](https://nebulox.io/app/gateway) 
+
+
+## Save Your API Key
+
+**Integrate Nebulox's APIs:** Once the gateway is created, you will be provided with an API key in a dialogue box. Utilize this unique API key for integrating Nebulox's APIs into your applications.
+
+
+**Copy and Save Your API Key:** Copy and securely save this API key. Note that once saved, you won't have access to it again. In case of loss, you can regenerate a new API key.
+
+
+**Confirm API Key:** Click on the confirmation button indicating that you have saved the API key.
+ 
+
+
+# Webhook URL
+
+## Setting Up Webhooks
+
+
+>if your Webhook URL is valid, you will be posted a payload like this: 
+
+```json
+{
+  "orderId": "dpkg-1234",
+  "txId": "cf2efce87f85a16e4bac7d0b3cdd548700f074fa375c0640b0da02155266d200",
+  "amount": "6.9",
+  "confirmations": 1,
+  "status": "COMPLETED"
+}
+```
+
+
+The configuration of a new Nebulox gateway necessitates the provision of a mandatory webhook URL. By providing a valid webhook URL during this setup, you empower Nebulox to relay real-time notifications regarding new transactions. This not only facilitates a seamless integration process but also lays the foundation for automated operations within your payment processing flow.
+
+
+### Receive Webhook Notifications:
+
+Once you've set up your URL, Nebulox will send you a heads-up whenever a new transaction happens with your provided address. When a transaction occurs, Nebulox sends a POST request to the specified webhook URL with a payload that includes details of the transaction.
+
 
 # Invoice
 
