@@ -295,7 +295,7 @@
     </script>
   </head>
 
-  <body class="index" data-languages="[&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;javascript&quot;,&quot;php&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -306,6 +306,7 @@
       <img src="images/logo-3a2a4129.png" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="php">php</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -314,6 +315,27 @@
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#nebulox-crypto-gateway" class="toc-h2 toc-link" data-title="Nebulox Crypto Gateway">Nebulox Crypto Gateway</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#api-key" class="toc-h1 toc-link" data-title="API Key">API Key</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#save-your-api-key" class="toc-h2 toc-link" data-title="Save Your API Key">Save Your API Key</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#webhook-url" class="toc-h1 toc-link" data-title="Webhook URL">Webhook URL</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#setting-up-webhooks" class="toc-h2 toc-link" data-title="Setting Up Webhooks">Setting Up Webhooks</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#invoice" class="toc-h1 toc-link" data-title="Invoice">Invoice</a>
@@ -328,10 +350,10 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='https://nebulox.io/register' ><h3>Sign Up for an API Key</h3></a></li>
+            <li><a href='https://nebulox.io/app/user/register' ><h3>Sign Up for an API Key</h3></a></li>
             <li><hr></li>
-            <li><a href='https://cryptogateway-quby-dev.nginhub.com/docs'><h3>Swagger</h3></a></li>
-            <li><a href='https://cryptogateway-quby-dev.nginhub.com/docs'><h3>Postman</h3></a></li>
+            <li><a href='https://api.nebulox.io/docs'><h3>Swagger</h3></a></li>
+            <li><a href='https://www.postman.com/cloudy-shuttle-20631/workspace/nebulox-public-api/overview'><h3>Postman</h3></a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -343,25 +365,86 @@
 <p>Crypto payment gateway by Nebulox is leading solutions for Merchants and Business clients. It’s a decentralized Crypto payment gateway that enables businesses to accept transactions in Bitcoin and other crypto currencies. </p>
 
 <p>This payment API allows you to integrate &amp; accept cryptocurrencies payments into your website. The Payment API links the checkout system of your business to a payment processing network that allows your clients to make transactions from you.</p>
+<h2 id='nebulox-crypto-gateway'>Nebulox Crypto Gateway</h2>
+<p>Nebulox Gateway simplifies cryptocurrency transactions for businesses. By creating a gateway with essential details, including a Webhook URL, it facilitates real-time notifications. Valid transactions trigger automatic webhook alerts, delivering comprehensive details instantly. This user-friendly system ensures seamless integration, making cryptocurrency payments straightforward and efficient.</p>
+<h1 id='api-key'>API Key</h1>
+<p>with An API Key you can seamlessly integrate with Nebulox&#39;s Crypto payment gateway services. follow these steps to acquire an API key: </p>
+
+<p><strong>Create an Account:</strong> Start by creating an account on Nebulox.io using this <a href="https://nebulox.io/app/user/register">registration link</a>.</p>
+
+<p><strong>Access Gateway Setup:</strong> In your dashboard, navigate to the gateway section in the side menu. Click on the &quot;Setup Your Free Gateway&quot; button to create your first gateway.</p>
+
+<p><strong>Provide Gateway Details:</strong> Fill in some simple inputs: 
+  - Business Name
+  - Payment Expiration Time 
+  - Website URL
+  - Webhook URL
+  - Business Logo file(optional).</p>
+
+<p><strong>Create Gateway:</strong> Click on the create <a href="https://nebulox.io/app/gateway">gateway button</a> </p>
+<h2 id='save-your-api-key'>Save Your API Key</h2>
+<p><strong>Integrate Nebulox&#39;s APIs:</strong> Once the gateway is created, you will be provided with an API key in a dialogue box. Utilize this unique API key for integrating Nebulox&#39;s APIs into your applications.</p>
+
+<p><strong>Copy and Save Your API Key:</strong> Copy and securely save this API key. Note that once saved, you won&#39;t have access to it again. In case of loss, you can regenerate a new API key.</p>
+
+<p><strong>Confirm API Key:</strong> Click on the confirmation button indicating that you have saved the API key.</p>
+<h1 id='webhook-url'>Webhook URL</h1><h2 id='setting-up-webhooks'>Setting Up Webhooks</h2>
+<blockquote>
+<p>if your Webhook URL is valid, you will be posted a payload like this: </p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dpkg-1234"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"txId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cf2efce87f85a16e4bac7d0b3cdd548700f074fa375c0640b0da02155266d200"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6.9"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COMPLETED"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The configuration of a new Nebulox gateway necessitates the provision of a mandatory webhook URL. By providing a valid webhook URL during this setup, you empower Nebulox to relay real-time notifications regarding new transactions. This not only facilitates a seamless integration process but also lays the foundation for automated operations within your payment processing flow.</p>
+<h3 id='receive-webhook-notifications'>Receive Webhook Notifications:</h3>
+<p>Once you&#39;ve set up your URL, Nebulox will send you a heads-up whenever a new transaction happens with your provided address. When a transaction occurs, Nebulox sends a POST request to the specified webhook URL with a payload that includes details of the transaction.</p>
 <h1 id='invoice'>Invoice</h1><h2 id='create-invoice'>Create Invoice</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
 
-<span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://cryptogateway-quby-dev.nginhub.com/api/invoice/create</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+<span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.nebulox.io/api/invoice/create</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
     <span class="na">apiKey</span><span class="p">:</span> <span class="dl">'</span><span class="s1">YOUR_API_KEY</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">price</span><span class="p">:</span> <span class="dl">'</span><span class="s1">100</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">orderId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">YOUR_ORDER_ID</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">baseCurrency</span><span class="p">:</span> <span class="dl">'</span><span class="s1">usd</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">coinSymbol</span><span class="p">:</span> <span class="dl">'</span><span class="s1">BTC</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">networkName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Bitcoin</span><span class="dl">'</span>
+    <span class="na">amount</span><span class="p">:</span><span class="dl">'</span><span class="s1">0.0025</span><span class="dl">'</span>
   <span class="p">})</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
   <span class="p">})</span>
   <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
   <span class="p">});</span>
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">GuzzleHttp\Client</span><span class="p">();</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span>
+    <span class="s1">'POST'</span><span class="p">,</span>
+    <span class="s1">'https://api.nebulox.io/api/invoice/create'</span><span class="p">,</span>
+    <span class="p">[</span>
+        <span class="s1">'form_params'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+          <span class="s1">'apiKey'</span><span class="o">:</span> <span class="s1">'YOUR_API_KEY'</span><span class="p">,</span>
+          <span class="s1">'price'</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+          <span class="s1">'orderId'</span><span class="o">:</span> <span class="s1">'YOUR_ORDER_ID'</span><span class="p">,</span>
+          <span class="s1">'baseCurrency'</span><span class="o">:</span> <span class="s1">'USD'</span><span class="p">,</span>
+          <span class="s1">'coinSymbol'</span><span class="o">:</span> <span class="s1">'BTC'</span><span class="p">,</span>
+          <span class="s1">'networkName'</span><span class="o">:</span> <span class="s1">'Bitcoin'</span>
+          <span class="s1">'amount'</span> <span class="o">:</span><span class="s1">'0.0025'</span>
+        <span class="p">]</span>
+    <span class="p">]</span>
+<span class="p">);</span>
+
+<span class="nv">$headers</span> <span class="o">=</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="nf">getHeaders</span><span class="p">();</span>
+<span class="nv">$body</span> <span class="o">=</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="nf">getBody</span><span class="p">();</span>
+
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$headers</span><span class="p">,</span> <span class="nv">$body</span><span class="p">);</span>
 </code></pre></div>
 <blockquote>
-<p>If every thing you sent is correct you will get a response like bellow with status code 201:</p>
+<p>If everything you sent is correct you will get a response like bellow with status code 201:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Operation was successful."</span><span class="p">,</span><span class="w">
@@ -372,7 +455,7 @@
       </span><span class="nl">"gatewayId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"41c6fe17-b72f-4923-9da2-dc7a91173e73"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d6646cf8-0b65-4d7d-ab2b-02e8dcd1ede3"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"addressId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0025</span><span class="p">,</span><span class="w">
       </span><span class="nl">"coinId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"networkId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"info"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -395,7 +478,7 @@
 </span></code></pre></div>
 <p>This payment crypto API allows you to integrate &amp; accept cryptocurrency payments on your website. So create a payment!</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>POST https://cryptogateway-quby-dev.nginhub.com/api/invoice/create</code></p>
+<p><code>POST https://api.nebulox.io/api/invoice/create</code></p>
 <h3 id='request-body'>Request Body</h3>
 <table><thead>
 <tr>
@@ -441,13 +524,19 @@
 <td>No</td>
 <td>Your order payment network, If you send us this parameter, your user will skip the select network page.</td>
 </tr>
+<tr>
+<td><code>amount</code></td>
+<td>number</td>
+<td>Yes</td>
+<td>Order&#39;s amount.</td>
+</tr>
 </tbody></table>
 
 <aside class="notice">
   Note:
-  <li> <b>baseCurrency</b> must be in [<code>eur</code>, <code>usd</code>]. </li>
-  <li> <b>coinSymbol</b> must be in [<code>BTC</code>]. </li>
-  <li> <b>networkName</b> must be in [<code>Bitcoin</code>]. </li>
+  <li> <b>baseCurrency</b> must be in [<code>EUR</code>, <code>USD</code>]. </li>
+  <li> <b>coinSymbol</b> must be in [<code>BTC</code>,<code>ETH</code>,<code>USDT</code>,<code>TRX</code>]. </li>
+  <li> <b>networkName</b> must be in [<code>Bitcoin</code>,<code>Ethereum</code>,<code>Tron</code>]. </li>
 </aside>
 <h1 id='errors'>Errors</h1>
 <p>The Nebulox API uses the following error codes:</p>
@@ -500,6 +589,7 @@
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="php">php</a>
           </div>
       </div>
     </div>
